@@ -35,6 +35,12 @@ export default async function Home() {
           </button>
         </form>
       </div>
+      <section className="text-left pl-10 mt-4">
+        <p><strong>Explanations:</strong></p>
+        <p>On first button the state is held on client side and a js script handles the change</p>
+        <p>On the second button the state is held on client, but htmx requests a new button with a new state on btn click</p>
+        <p>On the third button the state is held on server, rendered on client, changed using a react server action and page revalidated</p>
+      </section>
     </main>
   );
 }
