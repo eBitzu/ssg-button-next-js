@@ -22,10 +22,10 @@ export default function RootLayout({
             const btn = document.querySelector('.click-btn');
             if(btn) {
               btn?.addEventListener('click', (e) => {
-                // alert(e.currentTarget.dataset.provider);
+                alert(e.currentTarget.dataset.provider);
               })
             }
-            `}
+          `}
       </Script>
       <body className={inter.className}>{children}</body>
     </html>
