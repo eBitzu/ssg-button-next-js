@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-before-interactive-script-outside-document */
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -17,12 +18,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Script
+        src="https://unpkg.com/htmx.org@1.9.4"
+      />
       <Script id="btn-loader" strategy="afterInteractive">
         {`
             const btn = document.querySelector('.click-btn');
             if(btn) {
               btn?.addEventListener('click', (e) => {
-                alert(e.currentTarget.dataset.provider);
+                const state = e.currentTarget.value === "blue" ? "red" : "blue"
+                e.currentTarget.classList = "p-2 rounded-md bg-" + state + "-500";
+                e.currentTarget.value = state;
               })
             }
           `}
