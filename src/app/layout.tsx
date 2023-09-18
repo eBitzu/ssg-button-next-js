@@ -21,7 +21,7 @@ export default function RootLayout({
       />
       <Script id="btn-loader" strategy="afterInteractive">
         {`
-            const btn = document.querySelector('.click-btn');
+            const btn = document.querySelector('#click-btn');
             if(btn) {
               btn?.addEventListener('click', (e) => {
                 const state = e.currentTarget.value === "blue" ? "red" : "blue"
