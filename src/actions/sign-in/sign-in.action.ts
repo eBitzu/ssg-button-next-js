@@ -1,10 +1,12 @@
-'use server';
+"use server";
 
 import { revalidatePath } from "next/cache";
-import { Color } from "../../app/state/color.state";
+import { cookies } from 'next/headers'
 
 export async function SignInFunction(e: FormData) {
-    const formColor = e.get('color') === 'blue' ? 'red' : 'blue';
-    await Color(formColor);
-    revalidatePath('/');
+  const formColor = e.get("color") === "blue" ? "red" : "blue";
+
+  cookies().set('x-color', formColor);
+  revalidatePath('/');
+  return {message: formColor};
 }

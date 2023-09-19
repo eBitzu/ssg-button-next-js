@@ -1,14 +1,13 @@
+import { cookies } from "next/headers";
 import { SignInFunction } from "../actions/sign-in/sign-in.action";
-
-const URL = process.env.NODE_ENV == 'development' ? "http://localhost:3000" : ''
+import { rootURL } from "../env/route.env";
 
 export async function ButtonServer() {
-  const color = await fetch(`${URL}/color`)
-    .then((res) => res.text())
-    .catch((er) => {
-      console.log("got an error here", er);
-      return "blue";
-    });
+  const color = await fetch(`${rootURL}/api`, { credentials: "include" })
+    .then(() => {
+      return cookies().get("x-color")?.value ?? "blue";
+    })
+    .catch(() => 'red');
   return (
     <form action={SignInFunction}>
       <input type="hidden" value={color} name="color" />

@@ -21,14 +21,11 @@ export default function RootLayout({
       />
       <Script id="btn-loader" strategy="afterInteractive">
         {`
-            const btn = document.querySelector('#click-btn');
-            if(btn) {
-              btn?.addEventListener('click', (e) => {
-                const state = e.currentTarget.value === "blue" ? "red" : "blue"
-                e.currentTarget.classList = "p-2 rounded-md bg-" + state + "-500";
-                e.currentTarget.value = state;
-              })
-            }
+            document.querySelector('#click-btn')?.addEventListener('click', (e) => {
+              const state = e.currentTarget.value === "blue" ? "red" : "blue"
+              e.currentTarget.classList = "p-2 rounded-md bg-" + state + "-500";
+              e.currentTarget.value = state;
+            })
           `}
       </Script>
       <body>{children}</body>
