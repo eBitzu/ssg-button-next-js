@@ -1,7 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { cookies } from 'next/headers'
+import { cookies } from 'next/headers';
 
 export async function SignInFunction(e: FormData) {
   const formColor = e.get("color") === "blue" ? "red" : "blue";

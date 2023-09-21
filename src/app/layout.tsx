@@ -1,8 +1,8 @@
 /* eslint-disable @next/next/no-before-interactive-script-outside-document */
 import "./globals.css";
 import type { Metadata } from "next";
+import Link from "next/link";
 import Script from "next/script";
-
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,9 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Script
-        src="https://unpkg.com/htmx.org@1.9.4"
-      />
+      <Script src="https://unpkg.com/htmx.org@1.9.4" />
       <Script id="btn-loader" strategy="afterInteractive">
         {`
             document.querySelector('#click-btn')?.addEventListener('click', (e) => {
@@ -28,7 +26,35 @@ export default function RootLayout({
             })
           `}
       </Script>
-      <body>{children}</body>
+      <body>
+        <header className="text-white bg-indigo-700">
+          <nav className="flex justify-around items-center mx-auto h-12  md:max-w-3xl">
+            <Link href={"/"}>
+              <span>About me</span>
+            </Link>
+            <Link href={"/problem"}>
+              <span>The problem</span>
+            </Link>
+            <Link href={"/solution1"}>
+              <span>Solution 1</span>
+            </Link>
+            <Link href={"/solution2"}>
+              <span>Solution 2</span>
+            </Link>
+            <Link href={"/solution3"}>
+              <span>Solution 3</span>
+            </Link>
+            <Link href={"/all"}>
+              <span>All Solutions</span>
+            </Link>
+          </nav>
+        </header>
+        <main className="text-center p-4">
+          {children}
+        </main>
+        <div className="bg-blue-500 hidden" />
+        <div className="bg-red-500 hidden" />
+      </body>
     </html>
   );
 }
