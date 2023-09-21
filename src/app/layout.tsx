@@ -35,16 +35,16 @@ export default function RootLayout({
             <Link href={"/problem"}>
               <span>The problem</span>
             </Link>
-            <Link href={"/solution1"}>
+            <Link href={"/solution1"} prefetch={false}>
               <span>Solution 1</span>
             </Link>
-            <Link href={"/solution2"}>
+            <Link href={"/solution2"} prefetch={false}>
               <span>Solution 2</span>
             </Link>
-            <Link href={"/solution3"}>
+            <Link href={"/solution3"} prefetch={false}>
               <span>Solution 3</span>
             </Link>
-            <Link href={"/all"}>
+            <Link href={"/all"} prefetch={false}>
               <span>All Solutions</span>
             </Link>
           </nav>
