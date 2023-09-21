@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-before-interactive-script-outside-document */
 import "./globals.css";
 import type { Metadata } from "next";
-import Link from "next/link";
 import Script from "next/script";
 
 export const metadata: Metadata = {
@@ -39,16 +38,16 @@ export default function RootLayout({
               <span>About me</span>
             </a>
             <a href={"/problem"}>
-              <span>The problem</span>
+              <span className="text-red-500">The problem</span>
             </a>
             <a href={"/solution1"}>
-              <span>Solution 1</span>
+              <span className="text-yellow-500">Solution 1</span>
             </a>
             <a href={"/solution2"}>
-              <span>Solution 2</span>
+              <span className="text-green-400">Solution 2</span>
             </a>
             <a href={"/solution3"}>
-              <span>Solution 3</span>
+              <span className="text-green-600">Solution 3</span>
             </a>
           </nav>
         </header>
