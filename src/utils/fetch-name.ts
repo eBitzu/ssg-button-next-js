@@ -8,8 +8,8 @@ export const fetchData = async () => {
       const txt = await res.text();
       name = txt;
     })
-    .catch(() => {
-      console.log("er", url);
+    .catch((e) => {
+      console.log("er", url, e.message);
       name = "build data";
     });
 

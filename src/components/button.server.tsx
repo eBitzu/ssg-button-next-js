@@ -2,7 +2,7 @@ import { cookies } from "next/headers";
 import { SignInFunction } from "../actions/sign-in/sign-in.action";
 import { fetchData } from "../utils/fetch-name";
 
-export async function Solution3() {
+export async function ButtonServer() {
   const data = await fetchData();
   const color = cookies().get('x-color')?.value ?? 'blue';
   return (

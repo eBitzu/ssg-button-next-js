@@ -19,10 +19,16 @@ export default function RootLayout({
       <Script src="https://unpkg.com/htmx.org@1.9.4" />
       <Script id="btn-loader" strategy="afterInteractive">
         {`
-            document.querySelector('#click-btn')?.addEventListener('click', (e) => {
-              const state = e.currentTarget.value === "blue" ? "red" : "blue"
+            const el = document.querySelector('#click-btn');
+            el?.addEventListener('click', (e) => {
+              const state = e.currentTarget.value === "blue" ? "red" : "blue";
               e.currentTarget.classList = "p-2 rounded-md bg-" + state + "-500";
               e.currentTarget.value = state;
+              fetch('/api').then((res) => res.text()).then((val) => {
+                el.innerText = "with JS event listener - " + val;
+              }).catch((er) => {
+                console.log('failed', er);
+              })
             })
           `}
       </Script>
@@ -43,9 +49,6 @@ export default function RootLayout({
             </Link>
             <Link href={"/solution3"} prefetch={false}>
               <span>Solution 3</span>
-            </Link>
-            <Link href={"/all"} prefetch={false}>
-              <span>All Solutions</span>
             </Link>
           </nav>
         </header>
