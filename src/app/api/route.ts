@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(request: NextRequest) {
-  const data = "be-data-"; + new Date().getTime();
+  const data = "be-data-" + new Date().getTime();
 
   const res = await request.text();
   if (res.includes("btn-color")) {
