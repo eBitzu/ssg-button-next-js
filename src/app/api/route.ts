@@ -2,22 +2,22 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(request: NextRequest) {
   const data = "be-data";
-  try {
-    const res = await request.text();
-    if (res.includes("btn-color")) {
-      const newState =
-        res.replace("btn-color=", "") === "blue" ? "red" : "blue";
 
-      return new NextResponse(`
+  const res = await request.text();
+  if (res.includes("btn-color")) {
+    const newState = res.replace("btn-color=", "") === "blue" ? "red" : "blue";
+
+    return new NextResponse(`
     <button class="p-2 bg-${newState}-500 rounded-md text-white"
         name="btn-color"
         value="${newState}"
         hx-post="/api"
         hx-swap="outerHTML">with htmx - ${data}</button>
   `);
-    }
-    return new NextResponse(data);
-  } catch (e) {
-    return new NextResponse(data);
   }
+}
+export async function GET() {
+  const data = "be-data";
+
+  return new NextResponse(data);
 }

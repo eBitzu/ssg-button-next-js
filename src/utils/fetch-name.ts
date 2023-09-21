@@ -2,14 +2,14 @@ import { rootURL } from "../env/route.env";
 
 export const fetchData = async () => {
   let name = "no-data";
-
-  await fetch(`${rootURL}/api`, { method: "POST", body: "", cache: 'no-cache' })
+  const url = `${rootURL}/api`;
+  await fetch(url, { cache: 'no-cache' })
     .then(async (res) => {
       const txt = await res.text();
       name = txt;
     })
     .catch(() => {
-      console.log("er");
+      console.log("er", url);
       name = "build data";
     });
 
