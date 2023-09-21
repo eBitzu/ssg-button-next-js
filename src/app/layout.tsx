@@ -35,21 +35,21 @@ export default function RootLayout({
       <body>
         <header className="text-white bg-indigo-700">
           <nav className="flex justify-around items-center mx-auto h-12  md:max-w-3xl">
-            <Link href={"/"}>
+            <a href={"/"}>
               <span>About me</span>
-            </Link>
-            <Link href={"/problem"}>
+            </a>
+            <a href={"/problem"}>
               <span>The problem</span>
-            </Link>
-            <Link href={"/solution1"} prefetch={false}>
+            </a>
+            <a href={"/solution1"}>
               <span>Solution 1</span>
-            </Link>
-            <Link href={"/solution2"} prefetch={false}>
+            </a>
+            <a href={"/solution2"}>
               <span>Solution 2</span>
-            </Link>
-            <Link href={"/solution3"} prefetch={false}>
+            </a>
+            <a href={"/solution3"}>
               <span>Solution 3</span>
-            </Link>
+            </a>
           </nav>
         </header>
         <main className="text-center p-4">
