@@ -3,7 +3,7 @@ import { rootURL } from "../env/route.env";
 export const fetchData = async () => {
   let name = "no-data";
   const url = `${rootURL}/api`;
-  await fetch(url, { cache: 'no-cache' })
+  await fetch(url)
     .then(async (res) => {
       const txt = await res.text();
       name = txt;
