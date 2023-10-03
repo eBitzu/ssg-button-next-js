@@ -7,6 +7,6 @@ export async function SignInFunction(e: FormData) {
   const formColor = e.get("color") === "blue" ? "red" : "blue";
 
   cookies().set('x-color', formColor);
-  revalidatePath('/');
+  revalidatePath('/server-actions-way');
   return {message: formColor};
 }
