@@ -2,13 +2,18 @@
 import { FC, useState } from "react";
 import { fetchData } from "../utils/fetch-name";
 
-export const ClientButton: FC<{ data: string }> = ({ data }) => {
+type ClientButtonProps = {
+  data: string;
+  extended?: boolean;
+}
+export const ClientButton: FC<ClientButtonProps> = ({ data, extended  }) => {
   const [state, setState] = useState(true);
   const [sData, setData] = useState(data);
   const handleClick = () => {
     setState((old) => !old);
-    // window.location.replace('/problem');
-    // fetchData().then(setData);
+    if(extended) {
+      fetchData().then(setData);
+    }
   }
   return (
     <button

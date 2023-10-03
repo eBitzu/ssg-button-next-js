@@ -20,20 +20,21 @@ export default async function PageDefault() {
   );
 }
 // button.client.tsx
-export const ClientButton: FC<{ data: string }> = ({ data }) => {
+export const ClientButton: FC<ClientButtonProps> = ({ data, extended }) => {
   const [state, setState] = useState(true);
-  // const [sData, setData] = useState(data); // on refetch
+  const [sData, setData] = useState(data);
   const handleClick = () => {
     setState((old) => !old);
-    // window.location.replace('/problem'); // forced reload?
-    // fetchData().then(setData); // re-fetch manually??
+    if(extended) {
+      fetchData().then(setData);
+    }
   }
   return (
     <button
       onClick={handleClick}
       className={\`p-2 rounded-md bg-\${state ? "blue" : "red"}-500 text-white\`}
     >
-      with onClick - {data} // or sData
+      with onClick - {sData}
     </button>
   );
 }`}
