@@ -23,13 +23,13 @@ export default function RootLayout({
               <span className="text-white">The problem</span>
             </a>
             <a href={"/vanilla-way"}>
-              <span className="text-white">Solution 1</span>
+              <span className="text-white">Step one</span>
             </a>
             <a href={"/htmx-way"}>
-              <span className="text-white">Solution 2</span>
+              <span className="text-white">Solution 1</span>
             </a>
             <a href={"/server-actions-way"}>
-              <span className="text-white">Solution 3</span>
+              <span className="text-white">Solution 2</span>
             </a>
           </nav>
         </header>
