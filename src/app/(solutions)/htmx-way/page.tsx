@@ -3,7 +3,7 @@ import { ButtonTitleEntryId } from "../../../env/contentful/contentful.constants
 import { fetchData } from "../../../utils/fetch-name";
 import { HTMXPre } from "./constants";
 
-export default async function Solution2() {
+export default async function Solution1() {
   const data = await fetchData();
   const title = await contentfulClient.getEntry(ButtonTitleEntryId)
 
