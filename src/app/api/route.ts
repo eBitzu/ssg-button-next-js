@@ -8,7 +8,7 @@ export async function POST(request: NextRequest) {
     const newState = res.replace("btn-color=", "") === "blue" ? "red" : "blue";
 
     return new NextResponse(`
-    <button class="p-2 bg-${newState}-500 rounded-md text-white"
+    <button class="p-2 bg-${newState}-500 rounded-md"
         name="btn-color"
         value="${newState}"
         hx-post="/api"

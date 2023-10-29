@@ -1,10 +1,12 @@
 export const inlinePre = `
 // button doesn't get updated because data is not re-fetched
+
 export default async function PageDefault() {
+  const title = await contentfulClient.getEntry(ButtonTitleEntryId);
   const data = await fetchData();
   return (
     <>
-      {/* forced 'use client' element */}
+      // forced 'use client' element
       <ClientButton data={data} />
       <pre />
     </>
@@ -23,7 +25,7 @@ export const ClientButton: FC<ClientButtonProps> = ({ data, extended }) => {
   return (
     <button
       onClick={handleClick}
-      className={\`p-2 rounded-md bg-\${state ? "blue" : "red"}-500 text-white\`}
+      className={\`bg-\${state ? "blue" : "red"}-500\`}
     >
       with onClick - {sData}
     </button>

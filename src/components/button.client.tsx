@@ -7,20 +7,18 @@ type ClientButtonProps = {
   title: string;
   extended?: boolean;
 }
-export const ClientButton: FC<ClientButtonProps> = ({ data, extended, title  }) => {
+export const ClientButton: FC<ClientButtonProps> = ({ data, title  }) => {
   const [state, setState] = useState(true);
   const [sData, setData] = useState(data);
   const handleClick = () => {
     setState((old) => !old);
-    if(extended) {
-      fetchData().then(setData);
-    }
+    fetchData().then(setData);
   }
   return (
     <button
       onClick={handleClick}
       title={title}
-      className={`p-2 rounded-md bg-${state ? "blue" : "red"}-500 text-white`}
+      className={`bg-${state ? "blue" : "red"}-500`}
     >
       with onClick - {sData}
     </button>

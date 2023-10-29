@@ -19,11 +19,14 @@ export default function RootLayout({
             <a href={"/"}>
               <span>About me</span>
             </a>
+            <a href={"/start-point"}>
+              <span className="text-white">Start point</span>
+            </a>
             <a href={"/problem"}>
               <span className="text-white">The problem</span>
             </a>
             <a href={"/vanilla-way"}>
-              <span className="text-white">Step one</span>
+              <span className="text-white">First thought</span>
             </a>
             <a href={"/htmx-way"}>
               <span className="text-white">Solution 1</span>

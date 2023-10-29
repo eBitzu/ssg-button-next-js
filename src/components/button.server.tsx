@@ -10,7 +10,7 @@ export async function ButtonServer() {
       <input type="hidden" value={color} name="color" />
       <button
         type="submit"
-        className={`p-2 rounded-md bg-${color}-500 text-white`}
+        className={`bg-${color}-500`}
       >
         with RS action - {data}
       </button>
