@@ -5,9 +5,8 @@ import { fetchData } from "../utils/fetch-name";
 type ClientButtonProps = {
   data: string;
   title: string;
-  extended?: boolean;
 }
-export const ClientButton: FC<ClientButtonProps> = ({ data, title  }) => {
+export const ClientButton: FC<ClientButtonProps> = ({ data, title }) => {
   const [state, setState] = useState(true);
   const [sData, setData] = useState(data);
   const handleClick = () => {
