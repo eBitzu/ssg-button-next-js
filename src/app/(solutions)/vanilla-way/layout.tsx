@@ -1,6 +1,6 @@
 import Script from "next/script";
 
-export default function RootLayout({
+export default function VanillaLayout({
   children,
 }: {
   children: React.ReactNode;

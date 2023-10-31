@@ -19,9 +19,9 @@ export default async function Solution1() {
       >
         with htmx - {data}
       </button>
-      <code>
+      <pre>
         {HTMXPre}
-      </code>
+      </pre>
     </>
   );
 }

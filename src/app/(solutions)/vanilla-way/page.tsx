@@ -6,7 +6,6 @@ import { VanillaPre } from "./constants";
 export default async function InitialIdea() {
   const data = await fetchData();
   const title = await contentfulClient.getEntry(ButtonTitleEntryId);
-
   return (
     <>
       <button

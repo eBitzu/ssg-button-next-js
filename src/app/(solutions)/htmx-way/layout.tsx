@@ -1,6 +1,6 @@
 import Script from "next/script";
 
-export default function RootLayout({
+export default function HTMXLayout({
   children,
 }: {
   children: React.ReactNode;
