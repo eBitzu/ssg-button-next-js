@@ -9,7 +9,7 @@ export default async function PageDefault() {
       <button title={title.fields.ctaLabel as string}
         className={\`bg-\${state ? "blue" : "red"}-500\`}
       >
-        with onClick - {data}
+        no state, static data - {data}
       </button>
       <pre />
     </>
