@@ -1,7 +1,7 @@
 export const inlinePre = `
 // button doesn't get updated because data is not re-fetched
 
-export default async function PageDefault() {
+export default async function TheReactWay() {
   const title = await contentfulClient.getEntry(ButtonTitleEntryId);
   const data = await fetchData();
   return (
