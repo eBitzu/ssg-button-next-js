@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import "./globals.css";
 import type { Metadata } from "next";
 
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     <html lang="en">
@@ -41,6 +42,9 @@ export default function RootLayout({
         </main>
         <div className="bg-blue-500 hidden" />
         <div className="bg-red-500 hidden" />
+        <footer className="flex justify-center">
+          <a href="/devcon.pdf" download="devcon.pdf">Click to download the presentation</a>
+        </footer>
       </body>
     </html>
   );

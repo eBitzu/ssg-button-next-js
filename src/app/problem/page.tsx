@@ -5,7 +5,7 @@ import { fetchData } from '../../utils/fetch-name';
 import { inlinePre } from './constants';
 
 export default async function TheReactWay() {
-  const data = await fetchData();
+  const data = await fetchData({cache: 'no-cache'});
   const title = await contentfulClient.getEntry(ButtonTitleEntryId);
   return (
     <>
